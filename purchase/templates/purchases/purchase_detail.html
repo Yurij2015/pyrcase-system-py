@@ -1,0 +1,8 @@
+{% extends "base_generic.html" %}
+{% block content %}
+    <h1>Учебный курс: {{ learnbook.title }}</h1>
+    <p><strong>Преподаватель:</strong> <a href="">{{ learnbook.tutor }}</a></p> <!-- titpr detail link not yet defined -->
+    <p><strong>Категория:</strong> {% for category in learnbook.category.all %}
+        {{ category }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p><strong>Содержание</strong> </p><p class="text-justify"> {{ learnbook.summary }}</p>
+{% endblock %}

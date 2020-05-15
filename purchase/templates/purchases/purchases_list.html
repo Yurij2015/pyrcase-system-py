@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% block content %}
+    <h1>Список учебных курсов</h1>
+    {% if learnbook_list %}
+        <ul>
+
+            {% for learnbook in learnbook_list %}
+                <li>
+                    <a href="{{ learnbook.get_absolute_url }}">{{ learnbook.title }}</a> ({{ learnbook.tutor }})
+                </li>
+            {% endfor %}
+
+        </ul>
+    {% else %}
+        <p>There are no learnbooks.</p>
+    {% endif %}
+{% endblock %}

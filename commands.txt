@@ -1,0 +1,2 @@
+commands to container web
+pip install mysqlclient
