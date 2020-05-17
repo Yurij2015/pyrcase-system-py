@@ -1,4 +1,4 @@
-#!/home/yurij2015/PycharmProjects/LS_Django/venv/bin/python
+#!/home/yurij2015/PycharmProjects/PurchaseSystem/venv/bin/python
 from django.core import management
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 
 
-class LearnbookConfig(AppConfig):
+class PurchaseConfig(AppConfig):
     name = 'purchase'
+    verbose_name = "Закупки"

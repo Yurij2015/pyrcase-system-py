@@ -1,4 +1,4 @@
-#!/home/yurij2015/PycharmProjects/LS_Django/venv/bin/python
+#!/home/yurij2015/PycharmProjects/PurchaseSystem/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,2 +1,7 @@
-commands to container web
-pip install mysqlclient
+
+#pip install mysqlclient
+#
+#
+# python3 manage.py makemigrations
+# python3 manage.py migrate
+
