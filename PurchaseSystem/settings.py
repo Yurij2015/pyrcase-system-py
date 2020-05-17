@@ -26,8 +26,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-LANGUAGE_CODE = 'ru'
-
+LANGUAGE_CODE = 'ru-RU'
+USE_I18N = True
 # Application definition
 
 INSTALLED_APPS = [

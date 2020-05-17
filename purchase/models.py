@@ -55,7 +55,8 @@ class Storehouse(models.Model):
 
 class Contract(models.Model):
     number = models.CharField('Номер договора', max_length=20, help_text="Введите номер договора")
-    document = models.FileField(help_text="Выберите файл", upload_to='uploads/', null=True)
+    document = models.FileField(help_text="Выберите файл", upload_to='uploads/', null=True, verbose_name="Ссылка на "
+                                                                                                         "документ")
 
     def __str__(self):
         """
@@ -74,7 +75,7 @@ class Purchase(models.Model):
     date = models.DateField('Дата закупки', help_text="Введите дату осуществления закупки")
     deal = models.ManyToManyField('Deal', help_text="Выберите номер сделки")
     vendor = models.ManyToManyField('Vendor', help_text="Выберите поставщика")
-    contract = models.ForeignKey('Contract', on_delete=models.SET_NULL, null=True)
+    contract = models.ForeignKey('Contract', on_delete=models.SET_NULL, null=True, verbose_name="Договор")
 
     def __str__(self):
         """
@@ -84,7 +85,7 @@ class Purchase(models.Model):
 
     def get_absolute_url(self):
         """
-        Returns the url to access a particular book instance.
+        Returns the url to access a particular purchase instance.
         """
         return reverse('purchase-detail', args=[str(self.id)])
 
@@ -123,7 +124,7 @@ class Receipt(models.Model):
     """
     Model representing an delivery.
     """
-    name = models.CharField('Наименование приемка', max_length=100)
+    name = models.CharField('Наименование приемки', max_length=100)
     number = models.CharField('Номер приемки', max_length=100)
     date = models.DateField('Дата поставки', null=True, blank=True)
     delivery = models.ForeignKey('Delivery', on_delete=models.SET_NULL, null=True, help_text="Выберите номер поставки")
@@ -144,6 +145,3 @@ class Receipt(models.Model):
     class Meta:
         verbose_name = "Приемки"
         verbose_name_plural = "Приемки"
-
-
-
