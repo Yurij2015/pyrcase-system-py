@@ -101,7 +101,7 @@ class Delivery(models.Model):
     name = models.CharField('Наименование поставки', max_length=100)
     number = models.CharField('Номер поставки', max_length=100)
     date = models.DateField('Дата поставки', null=True, blank=True)
-    purchase = models.ForeignKey('Purchase', on_delete=models.SET_NULL, null=True)
+    purchase = models.ForeignKey('Purchase', on_delete=models.SET_NULL, null=True, verbose_name="Закупки")
 
     def get_absolute_url(self):
         """
@@ -127,8 +127,10 @@ class Receipt(models.Model):
     name = models.CharField('Наименование приемки', max_length=100)
     number = models.CharField('Номер приемки', max_length=100)
     date = models.DateField('Дата поставки', null=True, blank=True)
-    delivery = models.ForeignKey('Delivery', on_delete=models.SET_NULL, null=True, help_text="Выберите номер поставки")
-    storehouse = models.ForeignKey('Storehouse', on_delete=models.SET_NULL, null=True, help_text="Выберите склад")
+    delivery = models.ForeignKey('Delivery', on_delete=models.SET_NULL, null=True, help_text="Выберите номер поставки",
+                                 verbose_name="Поставки")
+    storehouse = models.ForeignKey('Storehouse', on_delete=models.SET_NULL, null=True, help_text="Выберите склад",
+                                   verbose_name="Склады")
 
     def get_absolute_url(self):
         """
