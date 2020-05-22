@@ -6,32 +6,34 @@
     {% if purchase_list %}
         <ul>
 
-            {% for purchse in purchase_list %}
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>Наименование закупки</th>
-                        <th>Номер закупк</th>
-                        <th>Дата закупки</th>
-                        <th>Номер договора</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Наименование закупки</th>
+                    <th>Номер закупк</th>
+                    <th>Дата закупки</th>
+                    <th>Номер договора</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for purchse in purchase_list %}
+
                     <tr>
                         <td>{{ purchse.title }}</td>
                         <td>{{ purchse.number }}</td>
                         <td>{{ purchse.date }}</td>
                         <td>{{ purchse.contract.number }}</td>
                     </tr>
-                    </tbody>
+                {% endfor %}
 
-                </table>
-                {#                <li>#}
-                {#                    Наименование закупки - {{ purchse.title }}, Номер закупки#}
-                {#                    - {{ purchse.number }}, Дата закупки - {{ purchse.date }}, Номер договора#}
-                {#                    - {{ purchse.contract.number }}#}
-                {#                </li>#}
-            {% endfor %}
+                </tbody>
+
+            </table>
+            {#                <li>#}
+            {#                    Наименование закупки - {{ purchse.title }}, Номер закупки#}
+            {#                    - {{ purchse.number }}, Дата закупки - {{ purchse.date }}, Номер договора#}
+            {#                    - {{ purchse.contract.number }}#}
+            {#                </li>#}
 
         </ul>
     {% else %}
