@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h3>Система закупок</h3>
+
+    <p>Данные в информационной системе. Количество записей:</p>
+    <ul>
+        <li><strong>Сделки:</strong> {{ num_deal }}</li>
+        <li><strong>Закупки:</strong> {{ num_purchases }}</li>
+        <li><strong>Поставки:</strong> {{ num_delivery }}</li>
+        <li><strong>Поставщики:</strong> {{ num_vendor }}</li>
+        <li><strong>Склады:</strong> {{ num_storehouse }}</li>
+        <li><strong>Договоры:</strong> {{ num_contract }}</li>
+        <li><strong>Приемки:</strong> {{ num_receipt }}</li>
+
+
+    </ul>
+{% endblock %}

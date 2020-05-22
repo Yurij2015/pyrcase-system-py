@@ -77,17 +77,17 @@ class Purchase(models.Model):
     vendor = models.ManyToManyField('Vendor', help_text="Выберите поставщика")
     contract = models.ForeignKey('Contract', on_delete=models.SET_NULL, null=True, verbose_name="Договор")
 
-    def __str__(self):
-        """
-        String for representing the Model object.
-        """
-        return self.title
+    # def __str__(self):
+    #     """
+    #     String for representing the Model object.
+    #     """
+    #     return self.title
 
-    def get_absolute_url(self):
-        """
-        Returns the url to access a particular purchase instance.
-        """
-        return reverse('purchase-detail', args=[str(self.id)])
+    # def get_absolute_url(self):
+    #     """
+    #     Returns the url to access a particular purchase instance.
+    #     """
+    #     return reverse('purchase-detail', args=[str(self.id)])
 
     class Meta:
         verbose_name = "Закупки"
@@ -103,11 +103,11 @@ class Delivery(models.Model):
     date = models.DateField('Дата поставки', null=True, blank=True)
     purchase = models.ForeignKey('Purchase', on_delete=models.SET_NULL, null=True, verbose_name="Закупки")
 
-    def get_absolute_url(self):
-        """
-        Returns the url to access a particular author instance.
-        """
-        return reverse('delivery-detail', args=[str(self.id)])
+    # def get_absolute_url(self):
+    #     """
+    #     Returns the url to access a particular author instance.
+    #     """
+    #     return reverse('delivery-detail', args=[str(self.id)])
 
     def __str__(self):
         """
@@ -132,11 +132,11 @@ class Receipt(models.Model):
     storehouse = models.ForeignKey('Storehouse', on_delete=models.SET_NULL, null=True, help_text="Выберите склад",
                                    verbose_name="Склады")
 
-    def get_absolute_url(self):
-        """
-        Returns the url to access a particular author instance.
-        """
-        return reverse('receipt-detail', args=[str(self.id)])
+    # def get_absolute_url(self):
+    #     """
+    #     Returns the url to access a particular author instance.
+    #     """
+    #     return reverse('receipt-detail', args=[str(self.id)])
 
     def __str__(self):
         """
