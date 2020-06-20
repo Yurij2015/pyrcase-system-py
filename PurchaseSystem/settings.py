@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'purchase.apps.PurchaseConfig',
+
 ]
 
 ADMIN_STYLE = {
@@ -69,6 +70,9 @@ ADMIN_STYLE = {
     'logo-width': 'auto',
     'logo-height': '35px'
 }
+
+# ADMIN_LOGO = 'logo.png'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -166,3 +170,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "purchase/")
 MEDIA_URL = '/purchase/'
+
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]

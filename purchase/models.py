@@ -16,7 +16,7 @@ class Deal(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Сделка"
+        verbose_name = "Сделку"
         verbose_name_plural = "Сделки"
 
 
@@ -32,7 +32,7 @@ class Vendor(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = "Поставщик"
+        verbose_name = "Поставщика"
         verbose_name_plural = "Поставщики"
 
 
@@ -65,7 +65,7 @@ class Contract(models.Model):
 
     class Meta:
         verbose_name = "Договор на закупку"
-        verbose_name_plural = "Договора на закупку"
+        verbose_name_plural = "Договоры на закупку"
 
 
 class Purchase(models.Model):
@@ -89,7 +89,7 @@ class Purchase(models.Model):
     #     return reverse('purchase-detail', args=[str(self.id)])
 
     class Meta:
-        verbose_name = "Закупки"
+        verbose_name = "Закупку"
         verbose_name_plural = "Закупки"
 
 
@@ -115,7 +115,7 @@ class Delivery(models.Model):
         return '%s (%s)' % (self.name, self.number)
 
     class Meta:
-        verbose_name = "Поставки"
+        verbose_name = "Поставку"
         verbose_name_plural = "Поставки"
 
 
@@ -144,5 +144,5 @@ class Receipt(models.Model):
         return '%s (%s)' % (self.name, self.number)
 
     class Meta:
-        verbose_name = "Приемки"
+        verbose_name = "Приемку"
         verbose_name_plural = "Приемки"
