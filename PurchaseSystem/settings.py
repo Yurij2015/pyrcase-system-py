@@ -27,18 +27,48 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 LANGUAGE_CODE = 'ru-RU'
+
+LANGUAGES = (
+    ('ru', 'Russian'),
+)
+
 USE_I18N = True
 # Application definition
 
 INSTALLED_APPS = [
+    # 'grappelli_menu',
+    # 'grappelli',
+    'admin_menu',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'purchase.apps.PurchaseConfig'
+    'purchase.apps.PurchaseConfig',
 ]
+
+ADMIN_STYLE = {
+    'background': 'white',
+    'primary-color': '#205280',
+    'primary-text': '#d6d5d2',
+    'secondary-color': '#3B75AD',
+    'secondary-text': 'white',
+    'tertiary-color': '#F2F9FC',
+    'tertiary-text': 'black',
+    'breadcrumb-color': 'whitesmoke',
+    'breadcrumb-text': 'black',
+    'focus-color': '#eaeaea',
+    'focus-text': '#666',
+    'primary-button': '#26904A',
+    'primary-button-text': ' white',
+    'secondary-button': '#999',
+    'secondary-button-text': 'white',
+    'link-color': '#333',
+    'link-color-hover': 'lighten($link-color, 20%)',
+    'logo-width': 'auto',
+    'logo-height': '35px'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,8 +86,7 @@ ROOT_URLCONF = 'PurchaseSystem.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
